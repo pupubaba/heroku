@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %}새로운 글쓰기{% endblock %}
+
+{% block content %}
+<br>
+<form method="post">{% csrf_token %}
+    {{ form.non_field_errors }}
+    <div class="fieldWrapper">
+        {{ form.title.errors }}
+        <h4><label for="id_title">제목: </label></h4>
+        {{ form.title }}
+    </div>
+    <br>
+    <div class="fieldWrapper">
+        {{ form.body.errors }}
+        <h4><label for="id_body">본문: </label></h4>
+        {{ form.body }}
+    </div>
+    <input class="btn btn-dark" type="submit" value="제출하기" />
+</form>
+{% endblock %}
