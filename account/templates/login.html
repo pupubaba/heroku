@@ -2,3 +2,20 @@
 
 {% block title %} 로그인 {% endblock %}
 
+{% block content %}
+<h1>로그인</h1>
+
+<form mathod="POST" action="{% url 'login' %}">
+    {% csrf_token %}
+    Username:
+    <br>
+    <input name="username" type="text" value="">
+    <br>
+    Password:
+    <br>
+    <input name="password" type="password" value="">
+    <br>
+    <br>
+    <input class="btn btn-primary" type="submit" value="Login">
+</form>
+{% endblock %}
